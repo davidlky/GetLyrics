@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    android:background="#FF2b3f4c">
+
+    <PreferenceCategory android:title="@string/pref_user_profile" >
+        <EditTextPreference
+            android:title="@string/pref_user_name"
+            android:summary="@string/pref_user_name_summary"
+            android:textColor="#FF2b3f4c"
+            android:inputType="number"
+            android:key="prefFontSize"
+            android:defaultValue="26"/>
+        <ListPreference
+            android:entries="@array/colorChoice"
+            android:entryValues="@array/colorChoiceValue"
+            android:summary="Choose the Appearance of the App"
+            android:title="Color Scheme"
+            android:key="prefColorScheme"
+            android:defaultValue="1"
+            />
+        <CheckBoxPreference
+            android:title="Allow Notification"
+            android:defaultValue="true"
+            android:summary="Turn notification On or Off"
+            android:key="prefNotif"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pref_update_setting" >
+        <com.sevenhourdev.getlyric.OptionDialogPreference
+            android:summary="@string/pref_send_report_summary"
+            android:title="@string/pref_send_report"
+            android:dialogTitle="Are you sure?"
+            android:dialogMessage="You will have to re-import everything"
+            android:positiveButtonText="Yes"
+            android:negativeButtonText="No"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

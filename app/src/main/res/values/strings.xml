@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">getLyrics</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_saveall">Save All Locally</string>
+    <string name="button1">Add</string>
+    <string name="edit1">Song</string>
+    <string name="edit2">Band</string>
+    <string name="title_activity_display_message">Your Message</string>
+    <string name="searchbar">Search by Song</string>
+    <string name="title_activity_write_file">WriteFile</string>
+    <string name="edit">"Edit Lyrics"</string>
+    <string name="text1">Column1</string>
+    <string name="text2">Column</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_loading_lyrics">Gathering Lyrics</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="pref_send_report">Reset Database</string>
+    <string name="pref_send_report_summary">Reload the Songs in database (Will Lose all Lyrics as well)</string>
+    <string name="pref_sync_frequency">Reset Lyrics</string>
+    <string name="pref_sync_frequency_summary">Delete All Lyrics</string>
+    <string name="pref_user_name">Set Font Size</string>
+    <string name="pref_user_name_summary">Set the Font Size of the Lyrics</string>
+    <string name="pref_user_profile">Interface Design</string>
+    <string name="pref_update_setting">Resetting App</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_add_song">AddSong</string>
+
+</resources>

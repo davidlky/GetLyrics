@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:clipToPadding="false"
+    tools:context="com.example.myfirstapp.DisplayMessageActivity"
+    tools:ignore="MergeRootFrame"
+    android:background="#FF2b3f4c">
+
+
+    <ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:scrollbars="none"
+    android:layout_centerHorizontal="true"
+        android:layout_above="@+id/linearLayout">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            <TextView
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:id="@+id/lyrics_title"
+            android:isScrollContainer="true"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textColor="#fface2ed"
+            android:textSize="18sp"/>
+
+            <TextView
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:id="@+id/lyrics_text"
+                android:isScrollContainer="true"
+                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="#fff"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:textSize="14sp"
+                android:id="@+id/editText"
+                android:layout_gravity="center_horizontal"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textColor="#ffcdfffa"
+                />
+
+            <LinearLayout
+                android:paddingTop="@dimen/abs__action_bar_icon_vertical_padding"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/abs__action_bar_icon_vertical_padding"
+                android:id="@+id/linearLayout2"
+                android:background="#FF2b3f4c"
+                android:divider="#FF2b3f4c">
+
+                <EditText
+                    android:id="@+id/edit1"
+                    android:layout_weight="19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/search_length"
+                    android:hint="@string/edit1"
+                    android:textColor="#ffffffff" />
+
+                <EditText
+                    android:id="@+id/edit2"
+                    android:layout_weight="19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/search_length"
+                    android:hint="@string/edit2"
+                    android:focusableInTouchMode="true"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffffff" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="@dimen/search_length"
+                    android:textSize="14sp"
+                    android:text="@string/button1"
+                    android:onClick = "sendInfo"
+                    android:layout_gravity="center"
+                    android:textColor="#ffffffff"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_vertical|center_horizontal"
+        android:id="@+id/linearLayout">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:id="@+id/save_button"
+            android:layout_weight="1"
+            android:onClick="save"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_weight="1"
+            android:onClick="cancel"
+            android:id="@+id/cancel_button" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:indeterminate="true" />
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<resources>
+
+    <style name="AppBaseTheme" parent="@style/Theme.Sherlock.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="android:textColor">#FF2b3f4c</item>
+    </style>
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:background">#ff1b4355</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:actionMenuTextColor">#fffbfff9</item>
+        <item name="android:panelBackground">#ff1b4355</item>
+    </style>
+
+    <style name="CustomTheme" parent="@style/Theme.Sherlock.Light.DarkActionBar">
+        <item name="android:popupBackground">@drawable/back1</item>
+    </style>
+
+    <!-- Custom Style for yellow action bar -->
+    <style name="CustomActionBarTheme"
+        parent="@style/Theme.Sherlock.Light.DarkActionBar">
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:textColorHint">#ffffffff</item>
+
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <item name="spinnerItemStyle">@style/SpinnerItemStyle</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+
+    <style name="MyActionBar"
+        parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#FF2b3f4c</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="MyActionBar2"
+        parent="@style/Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">#ff2b2b2b</item>
+        <item name="android:shadowRadius">0</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="SpinnerItemStyle" parent="Widget.Sherlock.TextView.SpinnerItem">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+    </style>
+    <style name = "splash_screen" parent="@style/Theme.Sherlock.Light.NoActionBar">
+
+    </style>
+
+</resources>
