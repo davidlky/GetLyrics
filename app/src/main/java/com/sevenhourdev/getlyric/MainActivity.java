@@ -37,6 +37,9 @@ import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -72,6 +75,21 @@ public class MainActivity extends Activity  implements OnQueryTextListener {
             tintManager.setNavigationBarTintEnabled(true);
             tintManager.setNavigationBarTintColor(mainColor);
         }
+        findViewById(R.id.pink_icon).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddToLibrary.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton button = (FloatingActionButton) findViewById(R.id.pink_icon);
+        button.setSize(FloatingActionButton.SIZE_NORMAL);
+        button.setColorNormal(secondaryColor);
+        button.setIcon(R.drawable.ic_content_add);
+        button.setColorPressed(tertiaryColor);
+        button.setStrokeVisible(true);
     }
 
     private void importColors(){
@@ -169,61 +187,13 @@ public class MainActivity extends Activity  implements OnQueryTextListener {
         writeFile.close();
     }
 
-    /**
-     * Receives the go for searching whatever is inputted, reformat the fields to the ones properly accepted!
-     * @param view the View which clicked this
-     */
-    public void sendInfo(View view){
 
-        EditText text1 = (EditText) findViewById(R.id.edit1);
-        EditText text2  =(EditText) findViewById(R.id.edit2);
-        String song = text1.getText().toString();
-        String band = text2.getText().toString();
-
-        startSearch(song, band);
-    }
-
-    /**
-     * Actually Searching for the song (new song)
-     * @param title title of song
-     * @param band band of the song
-     */
-    public void startSearch(String title, String band){
-        if (title==null){
-            title ="";
-        }
-        if (band==null){
-            band ="";
-        }
-        final StringBuilder result = new StringBuilder(title.length());
-        String[] words = title.split("\\s");
-        for(int i=0,l=words.length;i<l;++i) {
-            if(i>0) result.append(" ");
-            result.append(Character.toUpperCase(words[i].charAt(0)))
-                    .append(words[i].substring(1));
-
-        }
-        final StringBuilder result2 = new StringBuilder(band.length());
-        String[] words2 = band.split("\\s");
-        for(int i=0,l=words2.length;i<l;++i) {
-            if(i>0) result2.append(" ");
-            result2.append(Character.toUpperCase(words2[i].charAt(0)))
-                    .append(words2[i].substring(1));
-
-        }
-        Song song = new Song(-1, result2.toString(), result.toString(), null);
-        Intent intent = new Intent(MainActivity.this, DisplayMessageActivity.class);
-        intent.putExtra("song",song);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
-    }
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         if (v.getId()==R.id.wow_songs) {
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-            menu.setHeaderTitle("Sup");
+            menu.setHeaderTitle("Menu");
             String[] menuItems = getResources().getStringArray(R.array.menu);
             for (int i = 0; i<menuItems.length; i++) {
                 menu.add(Menu.NONE, i, i, menuItems[i]);
@@ -236,9 +206,11 @@ public class MainActivity extends Activity  implements OnQueryTextListener {
         if(item.getTitle().equals("Delete")){
             Song thing = (Song) songAdt.getItem(info.position);
             WriteFile temp = new WriteFile(this);
-            temp.deleteRow(thing.getID()-1);
-            songAdt.notifyDataSetChanged();
+            temp.deleteRow(thing.getID());
             temp.close();
+            list.setAdapter(null);
+            Background background = new Background();
+            background.execute();
         }
         return true;
     }
@@ -275,31 +247,19 @@ public class MainActivity extends Activity  implements OnQueryTextListener {
 
     public class Background extends AsyncTask<Void, Void, Void>{
 
-        View placeHolder;
-        LinearLayout quickReturnView;
-        QuickReturnListView quickReturn;
         @Override
         protected void onPreExecute() {
 
             findViewById(R.id.imageView).setBackgroundColor(mainColor);
             ((TextView)findViewById(R.id.textView2)).setTextColor(secondaryColor);
             list = (ListView)findViewById(R.id.wow_songs);
-            ((EditText)findViewById(R.id.edit1)).setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
-            ((EditText)findViewById(R.id.edit2)).setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
-
             findViewById(R.id.container).setBackgroundColor(mainColor);
             list.setBackgroundColor(mainColor);
             //scroll and shit
 
-            quickReturnView = (LinearLayout) findViewById(R.id.linearLayout);
             //color setting
             findViewById(R.id.container).setBackgroundColor(mainColor);
             list.setBackgroundColor(mainColor);
-            quickReturnView.setBackgroundColor(mainColor);
-            //back to scroll and shit
-            View header = getLayoutInflater().inflate(R.layout.fragment_header, null);
-            placeHolder = header.findViewById(R.id.placeholder);
-            list.addHeaderView(header);
             list.setDivider(null);
         }
 
@@ -311,9 +271,6 @@ public class MainActivity extends Activity  implements OnQueryTextListener {
 
         @Override
         protected void onPostExecute(Void aVoid) {
-            quickReturn = new QuickReturnListView(list, quickReturnView, placeHolder);
-            list.getViewTreeObserver().addOnGlobalLayoutListener(quickReturn.makeOnGlobalLayoutListener());
-            list.setOnScrollListener(quickReturn.makeOnScrollListener());
             findViewById(R.id.imageView).setVisibility(View.GONE);
             findViewById(R.id.textView2).setVisibility(View.GONE);
             //set the scroller (with alphabetizer)

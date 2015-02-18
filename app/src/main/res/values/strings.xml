@@ -28,5 +28,6 @@
     <string name="pref_update_setting">Resetting App</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_add_song">AddSong</string>
+    <string name="title_activity_add_to_library">AddToLibrary</string>
 
 </resources>

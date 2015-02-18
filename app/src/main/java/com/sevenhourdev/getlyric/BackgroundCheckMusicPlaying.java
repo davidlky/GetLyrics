@@ -13,6 +13,8 @@ import android.os.IBinder;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.Toast;
+
 /**
  * Checks if Music is playing in the Background
  *
@@ -21,7 +23,7 @@ import android.util.Log;
 public class BackgroundCheckMusicPlaying extends Service {
     public static final String EXTRA_MESSAGE = "com.sevenhourdev.getlyrics.MESSAGE";
     private NotificationCompat.Builder mBuilder;
-    private boolean previosulydisplayed = false, firsttime = true;
+    private boolean previosulydisplayed = false;
     private String TAG = "adfasfsd";
 
     private NotificationManager mNotificationManager;
@@ -31,6 +33,9 @@ public class BackgroundCheckMusicPlaying extends Service {
         return null;
     }
 
+    String prev_artist = "";
+    String pev_album = "";
+    String prev_track = "";
     @Override
     public void onCreate() {
         super .onCreate();
@@ -43,7 +48,7 @@ public class BackgroundCheckMusicPlaying extends Service {
 
         AudioManager manager = (AudioManager)this.getSystemService(Context.AUDIO_SERVICE);
 
-        firsttime = !manager.isMusicActive();
+        previosulydisplayed = manager.isMusicActive();
         registerReceiver(mReceiver, iF);
     }
     private BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -52,21 +57,12 @@ public class BackgroundCheckMusicPlaying extends Service {
         {
             String action = intent.getAction();
             String cmd = intent.getStringExtra("command");
-            Log.d("mIntentReceiver.onReceive ", action + " / " + cmd);
+            Log.d("onReceive ", action + " / " + cmd);
             String artist = intent.getStringExtra("artist");
             String album = intent.getStringExtra("album");
             String track = intent.getStringExtra("track");
 
-            String prev_artist = null;
-            String pev_album = null;
-            String prev_track = null;
             Log.d("Music",artist+":"+album+":"+track);
-
-            if(prev_artist ==null &&prev_track==null &&pev_album==null){
-                prev_artist = artist;
-                prev_track = track;
-                pev_album = album;
-            }
             if(artist!=null&&album!=null&&track!=null) {
                 //make a intent and song
                 intent = new Intent(context, DisplayMessageActivity.class);
@@ -97,28 +93,26 @@ public class BackgroundCheckMusicPlaying extends Service {
                         (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
                 //see if notification should be removed
 
-                AudioManager manager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
-                Log.d("Swag", Boolean.toString(manager.isMusicActive()));
                 SharedPreferences sharedpreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
                 if(sharedpreferences.getBoolean("prefNotif", true)) {
                     if (action.contains("playstatechanged")) {
-                        if(!firsttime){
-                            if (!previosulydisplayed||(manager.isMusicActive())) {
+                            if (!previosulydisplayed) {
                                 mNotificationManager.notify(1, mBuilder.build());
                                 previosulydisplayed = true;
                             } else {
                                 mNotificationManager.cancel(1);
                                 previosulydisplayed = false;
                             }
-                        }
                     } else{
-                        if(!firsttime &&!(prev_artist.equals(artist))&&!(prev_track.equals(track))&&!(pev_album.equals(album))) {
+                        if((!(prev_artist.equals(artist)))&&(!(prev_track.equals(track)))&&(!(pev_album.equals(album)))) {
                             mNotificationManager.notify(1, mBuilder.build());
-                            previosulydisplayed = false;
+                            previosulydisplayed = true;
+                            prev_artist = artist;
+                            prev_track = track;
+                            pev_album = album;
                         }
                     }
                 }
-                firsttime = false;
             }
         }
     };
