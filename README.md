@@ -31,14 +31,14 @@ This is currenly also using [SystemBarTint](https://github.com/jgilfelt/SystemBa
 
 ## Screenshots
 ### Features
-![alt text](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(1).jpg "Screenshot")
-![alt text](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(2).jpg "Screenshot")
-![alt text](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(3).jpg "Screenshot")
-![alt text](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(4).jpg "Screenshot")
-![alt text](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(6).jpg "Screenshot")
+![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(1).jpg "Screenshot")
+![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(2).jpg "Screenshot")
+![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(3).jpg "Screenshot")
+![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(4).jpg "Screenshot")
+![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(6).jpg "Screenshot")
 
 ### Themes
-![alt text](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(8).jpg "Screenshot")
+![Themes](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(8).jpg "Screenshot")
 
 ## TODOS
 - Further Documentations
