@@ -36,11 +36,12 @@ This is currenly also using [SystemBarTint](https://github.com/jgilfelt/SystemBa
 
 ## Screenshots
 ### Features
-![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(1).jpg "Screenshot")
-![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(6).jpg "Screenshot")
-![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(2).jpg "Screenshot")
-![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(3).jpg "Screenshot")
-![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(4).jpg "Screenshot")
+<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(1).jpg" style = "width:300px; height:auto">
+<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(6).jpg" style = "width:300px; height:auto">
+<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(2).jpg" style = "width:300px; height:auto">
+<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(3).jpg" style = "width:300px; height:auto">
+<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(4).jpg" style = "width:300px; height:auto">
+
 
 ### Themes
 ![Themes](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(8).jpg "Screenshot")
