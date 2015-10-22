@@ -36,11 +36,11 @@ This is currenly also using [SystemBarTint](https://github.com/jgilfelt/SystemBa
 
 ## Screenshots
 ### Features
-<img scr="https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(1).jpg" width="300px" />
-<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(6).jpg" style = "width:300px; height:auto"/>
-<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(2).jpg" style = "width:300px; height:auto"/>
-<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(3).jpg" style = "width:300px; height:auto"/>
-<img scr = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(4).jpg" style = "width:300px; height:auto"/>
+<img src="https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(1).jpg" style = "width:300px; height:auto" />
+<img src = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(6).jpg" style = "width:300px; height:auto"/>
+<img src = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(2).jpg" style = "width:300px; height:auto"/>
+<img src = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(3).jpg" style = "width:300px; height:auto"/>
+<img src = "https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(4).jpg" style = "width:300px; height:auto"/>
 
 
 ### Themes
