@@ -29,6 +29,12 @@ This is currenly also using [SystemBarTint](https://github.com/jgilfelt/SystemBa
 | Song | Application | Also Parcelable. This is the Model for each song |
 | WriteFile |  | Read and write to the SQLite Database used behind storing data for this app |
 
+## TODOS
+- Further Documentations
+- Inline comments
+- Debugging on parsing and reading music titles
+- 
+
 ## Screenshots
 ### Features
 ![screens](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(1).jpg "Screenshot")
@@ -39,11 +45,6 @@ This is currenly also using [SystemBarTint](https://github.com/jgilfelt/SystemBa
 
 ### Themes
 ![Themes](https://raw.githubusercontent.com/davidlky/GetLyrics/master/screens/(8).jpg "Screenshot")
-
-## TODOS
-- Further Documentations
-- Inline comments
-- Debugging on parsing and reading music titles
 
 ## Credits
 Author: David Liu
