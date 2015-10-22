@@ -33,7 +33,6 @@ This is currenly also using [SystemBarTint](https://github.com/jgilfelt/SystemBa
 - Further Documentations
 - Inline comments
 - Debugging on parsing and reading music titles
-- 
 
 ## Screenshots
 ### Features
