@@ -404,6 +404,8 @@ public class Song extends Application implements Parcelable {
         if(input.length()>47) {
             input = input.substring(24);
             String answer = input.replace("<br />", "\n");
+            answer = answer.replace("<br/>", "\n");
+            answer = answer.replace("<br>", "\n");
             answer = answer.replace("<i>", "");
             answer = answer.replace("</i>", "");
 
@@ -421,9 +423,11 @@ public class Song extends Application implements Parcelable {
      */
     public String modify2(String input){
         if(input!=null) {
-            if (input.length() > 27) {
-                input = input.substring(27);
+            if (input.length() > 49) {
+                input = input.substring(49);
                 String answer = input.replace("<br/>", "\n");
+                answer = answer.replace("<br/>", "\n");
+                answer = answer.replace("<br>", "\n");
                 input = answer.replace("<i>", "");
                 answer = input.replace("</i>", "");
                 input = answer.replace("</p>", "\n");
